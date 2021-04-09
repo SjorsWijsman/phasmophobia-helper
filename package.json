@@ -1,0 +1,27 @@
+{
+  "name": "real-time-web-2021",
+  "version": "1.0.0",
+  "description": "Real Time Web App",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SjorsWijsman/real-time-web-2021.git"
+  },
+  "author": "Sjors Wijsman (https://github.com/SjorsWijsman)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SjorsWijsman/real-time-web-2021/issues"
+  },
+  "homepage": "https://github.com/SjorsWijsman/real-time-web-2021#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  }
+}
