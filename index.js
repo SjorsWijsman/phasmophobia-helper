@@ -3,6 +3,7 @@ const app = express()
 const http = require('http').createServer(app)
 const path = require('path')
 const io = require('socket.io')(http)
+const { searchVideos } = require('./modules/searchVideos')
 const port = process.env.PORT || 4000
 
 app.use(express.static(path.resolve('public')))
@@ -18,3 +19,5 @@ io.on('connection', (socket) => {
 http.listen(port, () => {
   console.log(`listening to port ${port}`)
 })
+
+console.log(searchVideos('masayoshi takanaka'))
