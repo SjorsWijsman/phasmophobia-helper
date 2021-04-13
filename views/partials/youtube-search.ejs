@@ -1,0 +1,14 @@
+<form action="" method="GET">
+  <input type="text" name="searchQuery" value="<%= locals.searchQuery %>">
+  <button type="submit">Search</button>
+</form>
+<ol>
+  <% for(result of locals.results) { %>
+    <li>
+      <%- include('./youtube-video', {videoId: result.id}) %>
+      <p><%= result.title %></p>
+      <a href="<%= result.link %>" target="_blank"><%= result.link %></a>
+    </li>
+  <% } %>
+</ol>
+
