@@ -8,13 +8,13 @@ Live Link:
 ## 📕 Table of Contents
 <table>
     <tr>
-        <td align="center"><a href="#">✨ Features<a></td>
-        <td align="center"><a href="#">⚙️ Installation<a></td>
-        <td align="center"><a href="#">🏗️ Concepts<a></td>
-        <td align="center"><a href="#">📃 Todo list<a></td>
-        <td align="center"><a href="#">⭐ Tech Stack<a></td>
-        <td align="center"><a href="#">📦 Packages<a></td>
-        <td align="center"><a href="#">🔐 License<a></td>
+        <td align="center"><a href="#-features">✨ Features<a></td>
+        <td align="center"><a href="#%EF%B8%8F-installation">⚙️ Installation<a></td>
+        <td align="center"><a href="#%EF%B8%8F-concepts">🏗️ Concepts<a></td>
+        <td align="center"><a href="#-todo-list">📃 Todo list<a></td>
+        <td align="center"><a href="#-tech-stack">⭐ Tech Stack<a></td>
+        <td align="center"><a href="#-packages">📦 Packages<a></td>
+        <td align="center"><a href="#-license">🔐 License<a></td>
     </tr>
 </table>
 
