@@ -31,7 +31,6 @@ socket.on('objectives', response => {
 
 // Evidence
 export function emitEvidence(value) {
-  console.log(value)
   socket.emit('evidence', value)
 }
 
