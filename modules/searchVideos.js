@@ -4,7 +4,6 @@ const querystring = require('querystring')
 require('dotenv').config()
 
 
-
 function getFromApi(url, params = {}) {
   return axios.get(url + querystring.stringify(params))
   .then(response => {
