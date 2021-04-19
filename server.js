@@ -12,8 +12,25 @@ app.use(express.static(path.resolve('build')))
 
 io.on('connection', (socket) => {
   console.log('user connected')
+
   socket.on('disconnect', () => {
     console.log('disconnected')
+  })
+
+  socket.on('name', (value) => {
+    socket.broadcast.emit('name', value)
+  })
+
+  socket.on('response', (value) => {
+    socket.broadcast.emit('response', value)
+  })
+
+  socket.on('objectives', (value) => {
+    socket.broadcast.emit('objectives', value)
+  })
+
+  socket.on('evidence', (value) => {
+    socket.broadcast.emit('evidence', value)
   })
 })
 

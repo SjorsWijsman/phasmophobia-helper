@@ -1,0 +1,97 @@
+/* Inputs */
+input {
+  background-color: var(--color-book-light);
+  border: 0;
+  padding: 0.3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  outline: 0;
+  border-bottom: 2px solid rgba(0,0,0,0);
+}
+
+input[type="text"]:hover, input[type="text"]:focus {
+  border-bottom: 2px solid var(--color-checked);
+}
+
+input[type="text"] {
+  padding-left: 0.5rem;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+/* from: http://doodlenerd.com/html-control/css-radio-button-generator */
+.control {
+  display: block;
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 0.6rem;
+  cursor: pointer;
+  --control-size: 1.8rem;
+  --control-size-inner: calc(var(--control-size) - 8px);
+  --control-size-border: 2px;
+  --control-size-difference: calc(calc(var(--control-size) - var(--control-size-inner)) / 2)
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control_indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--control-size);
+  width: var(--control-size);
+  background: var(--color-book-light);
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.control_indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  border: var(--control-size-border) solid var(--color-checked);
+}
+
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+
+.control:hover input ~ .control_indicator:after,
+.control input:focus ~ .control_indicator:after {
+  left: calc(var(--control-size-difference) - var(--control-size-border));
+  top: calc(var(--control-size-difference) - var(--control-size-border));
+}
+
+/* Radio Buttons */
+.control-radio .control_indicator {
+  border-radius: 50%;
+}
+
+.control-radio .control_indicator:after {
+  left: var(--control-size-difference);
+  top: var(--control-size-difference);
+  height: var(--control-size-inner);
+  width: var(--control-size-inner);
+  border-radius: 100%;
+  background: var(--color-checked);
+}
+
+/* Radio Buttons */
+.control-checkbox .control_indicator {
+  border-radius: 0;
+}
+
+.control-checkbox .control_indicator:after {
+  left: var(--control-size-difference);
+  top: var(--control-size-difference);
+  height: var(--control-size-inner);
+  width: var(--control-size-inner);
+  background: var(--color-checked);
+}

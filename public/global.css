@@ -1,0 +1,86 @@
+html {
+  --color-text: #332D2D;
+  --color-background: #1D1D21;
+  --color-book-dark: #7E7767;
+  --color-book: #D9CBAB;
+  --color-book-light: #F2F0DE;
+  --color-checked: #5963A0;
+  --color-checked-dark: #495493;
+  --breakpoint-tablet: 70rem;
+  font-size: calc(60% + 0.8vmin);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  background-color: var(--color-background);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: 'Cormorant', serif;
+  color: var(--color-text);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 70rem) {
+  body {
+	  padding: 0.8rem;
+    padding-bottom: 3rem;
+    height: auto;
+  }
+}
+
+h1 {
+  font-size: calc(2rem + 1vmin);
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+  opacity: 0.7;
+}
+
+p {
+  margin-bottom: 0.8rem;
+}
+
+/* Background hero image */
+.background-image {
+  background-image: url("phasmophobia.png");
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.08;
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-book-dark);
+}
