@@ -1,7 +1,7 @@
 <script>
 import { evidenceList } from "../../data/gameData.js" 
 import { gatheredEvidence } from "../../data/currentData.js" 
-import { emitEvidence } from "../../socket.js"
+import { emitEvidence } from "../../socket.js";
 
 let selection = {confirmed: [], ruledOut: []} 
 gatheredEvidence.subscribe(value => {
@@ -78,11 +78,11 @@ function updateSelection() {
     <h2>Type of Evidence</h2>
     {#each evidenceList as evidence}
       <label class="control control-checkbox">
-        <input type="checkbox" value={evidence.value} bind:group={selection.confirmed} on:change={(e) => updateData(e, evidence.value, "confirmed"), emitEvidence($gatheredEvidence)} />
+        <input type="checkbox" value={evidence.value} bind:group={selection.confirmed} on:change={(e) => { updateData(e, evidence.value, "confirmed") , emitEvidence($gatheredEvidence) }}/>
         <div class="control_indicator"></div>
       </label>
       <label class="control control-checkbox">
-        <input type="checkbox" value={evidence.value} bind:group={selection.ruledOut} on:change={(e) => updateData(e, evidence.value, "ruledOut"), emitEvidence($gatheredEvidence)} />
+        <input type="checkbox" value={evidence.value} bind:group={selection.ruledOut} on:change={(e) => { updateData(e, evidence.value, "ruledOut"), emitEvidence($gatheredEvidence) }}/>
         <div class="control_indicator"></div>
       </label>
       <div>
