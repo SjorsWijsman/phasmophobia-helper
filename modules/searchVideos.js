@@ -3,42 +3,34 @@ const querystring = require('querystring')
 
 require('dotenv').config()
 
-const params = {
-  part: 'snippet',
-  maxResults: 3,
-  key: process.env.API_KEY,
-  type: 'video',
-}
 
-function searchVideos(term) {
-  return axios.get('https://www.googleapis.com/youtube/v3/search?' + querystring.stringify({
-    ...params,
-    q: term,
-  }))
+
+function getFromApi(url, params = {}) {
+  return axios.get(url + querystring.stringify(params))
   .then(response => {
-    const result = response.data
-    const videos = result.items.map(video => {
-      return {
-        id: video.id.videoId,
-        link: 'https://www.youtube.com/watch?v=' + video.id.videoId,
-        publishedAt: video.snippet.publishedAt,
-        channelId: video.snippet.channelId,
-        channelTitle: video.snippet.channelTitle,
-        title: video.snippet.title,
-        description: video.snippet.description,
-        thumbnails: video.snippet.thumbnails
-      }
-    })
-    return videos
+    return response.data
   })
-  .catch(err => {
-    console.log(err)
+  .catch((error) => {
+    // Error 😨
+    if (error.response) {
+        /*
+         * The request was made and the server responded with a
+         * status code that falls out of the range of 2xx
+         */
+        console.log(error.response.data)
+        console.log(error.response.status)
+        console.log(error.response.headers)
+    } else if (error.request) {
+        /*
+         * The request was made but no response was received, `error.request`
+         * is an instance of XMLHttpRequest in the browser and an instance
+         * of http.ClientRequest in Node.js
+         */
+        console.log(error.request)
+    } else {
+        // Something happened in setting up the request and triggered an Error
+        console.log('Error', error.message)
+    }
+    console.log(error.config)
   })
-}
-
-
-exports.getVideos = async (term) => {
-  if (term) {
-    return await searchVideos(term)
-  }
 }

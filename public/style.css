@@ -1,11 +1,13 @@
 html {
-  --color-text: black;
-  --color-background: white;
+  --color-text: #fdfcff;
+  --color-background: #17161c;
+  --color-red: #ff0019;
   --max-content-width: 60rem;
   font-size: calc(55% + 0.8vmin);
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   height: 100%;
+  transition: all .2s ease;
 }
 
 :root {
@@ -20,15 +22,42 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: var(--color-text);
+  border: 0;
 }
 
-html > * {
-  padding: 1rem;
+input {
+  background-color: var(--color-background);
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-text);
+}
+
+button {
+  background-color: var(--color-text);
+  color: var(--color-background);
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-text);
+  cursor: pointer;
+}
+
+body > * {
+  padding: 1.6rem;
 }
 
 main {
   max-width: var(--max-content-width);
   margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+header:focus-within {
+  background-color: var(--color-background);
 }
 
 h1, h2, h3 {
@@ -46,4 +75,23 @@ h2 {
 
 h3 {
   --font-scale: 1.4;
+}
+
+
+#youtube-search {
+  display: flex;
+  flex-direction: column;
+}
+
+#youtube-search form {
+  display: flex;
+}
+
+#youtube-search form input {
+  flex-grow: 1;
+}
+
+
+iframe {
+  max-width: 100%;
 }
