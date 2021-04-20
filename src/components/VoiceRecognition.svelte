@@ -1,8 +1,9 @@
 <script>
 import { onMount } from "svelte" 
-import VoiceCommands from "./VoiceCommands.svelte" 
 import { synonyms } from "../data/voiceData.js" 
-import { transcript } from "../data/currentData.js" 
+import { transcript } from "../data/currentData.js"
+
+import VoiceCommands from "../modules/VoiceCommands.svelte" 
 
 let visible = true 
 let support = true 

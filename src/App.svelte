@@ -2,6 +2,8 @@
 import VoiceRecognition from "./components/VoiceRecognition.svelte"
 import ResetButton from "./components/ResetButton.svelte"
 import Page from "./components/Page.svelte"
+import RoomInput from  "./components/RoomInput.svelte"
+
 import GhostName from "./components/page-components/GhostName.svelte"
 import GhostResponse from "./components/page-components/GhostResponse.svelte"
 import Objectives from "./components/page-components/Objectives.svelte"
@@ -37,6 +39,7 @@ import GhostType from  "./components/page-components/GhostType.svelte"
 
 <VoiceRecognition/>
 <ResetButton/>
+<RoomInput/>
 
 <main class="book">
 	<Page>

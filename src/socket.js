@@ -1,39 +1,62 @@
+import { writable } from "svelte/store"
 import { ghostName, ghostResponse, objectives, gatheredEvidence } from "./data/currentData.js";
 
-const socket = io();
+const socket = io()
 
-// Ghost Name
-export function emitName(value) {
-  socket.emit('name', value)
-}
 
-socket.on('name', response => {
-  ghostName.update(value => value = response)
+export const currentRoom = writable(null)
+
+let roomValue = null;
+
+// Join Room on currentRoom change
+currentRoom.subscribe(room => {
+  roomValue = room
+  if (room) {
+    socket.emit('join', room)
+    console.log('joined room')
+  }
 })
 
-// Ghost Response
-export function emitResponse(value) {
-  socket.emit('response', value)
+
+// Emit Ghost Name
+export function emitName(value) {
+  if (roomValue) socket.emit('name', [roomValue, value])
 }
 
+// Receive Ghost Name
+socket.on('name', name => {
+  ghostName.update(value => value = name)
+})
+
+
+// Emit Ghost Response
+export function emitResponse(value) {
+  if (roomValue) socket.emit('response', [roomValue, value])
+}
+
+// Receive Ghost Response
 socket.on('response', response => {
   ghostResponse.update(value => value = response)
 })
 
-// Objectives
+
+// Emit Objectives
 export function emitObjectives(value) {
-  socket.emit('objectives', value)
+  if (roomValue) socket.emit('objectives', [roomValue, value])
 }
 
-socket.on('objectives', response => {
-  objectives.update(value => value = response)
+// Receive Objectives
+socket.on('objectives', objectivesList => {
+  objectives.update(value => value = objectivesList)
 })
 
-// Evidence
+
+// Emit Evidence
 export function emitEvidence(value) {
-  socket.emit('evidence', value)
+  if (roomValue) socket.emit('evidence', [roomValue, value])
 }
 
-socket.on('evidence', response => {
-  gatheredEvidence.update(value => value = response)
+// Receive Evidence
+socket.on('evidence', evidence => {
+  gatheredEvidence.update(value => value = evidence)
 })

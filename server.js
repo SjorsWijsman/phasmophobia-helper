@@ -8,7 +8,10 @@ const port = process.env.PORT || 4000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static(path.resolve('build')))
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('build') + '/index.html')
+})
 
 io.on('connection', (socket) => {
   console.log('user connected')
@@ -17,22 +20,29 @@ io.on('connection', (socket) => {
     console.log('disconnected')
   })
 
-  socket.on('name', (value) => {
-    socket.broadcast.emit('name', value)
+  socket.on('join', (room) => {
+    socket.join(room)
   })
 
-  socket.on('response', (value) => {
-    socket.broadcast.emit('response', value)
+  socket.on('name', ([room, name]) => {
+    socket.broadcast.to(room).emit('name', name)
   })
 
-  socket.on('objectives', (value) => {
-    socket.broadcast.emit('objectives', value)
+  socket.on('response', ([room, response]) => {
+    socket.broadcast.to(room).emit('response', response)
   })
 
-  socket.on('evidence', (value) => {
-    socket.broadcast.emit('evidence', value)
+  socket.on('objectives', ([room, objectives]) => {
+    socket.broadcast.to(room).emit('objectives', objectives)
+  })
+
+  socket.on('evidence', ([room, evidence]) => {
+    socket.broadcast.to(room).emit('evidence', evidence)
   })
 })
+
+
+app.use(express.static(path.resolve('build')))
 
 http.listen(port, () => {
   console.log(`listening to port ${port}`)

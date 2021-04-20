@@ -1,7 +1,7 @@
 <script>
 import { evidenceList } from "../../data/gameData.js" 
 import { gatheredEvidence } from "../../data/currentData.js" 
-import { emitEvidence } from "../../socket.js";
+import { emitEvidence } from "../../socket.js"
 
 let selection = {confirmed: [], ruledOut: []} 
 gatheredEvidence.subscribe(value => {
