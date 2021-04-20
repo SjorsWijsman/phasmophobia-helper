@@ -1,5 +1,5 @@
 # Phasmophobia Helper v2
-Live Link: 
+Live Link: https://desolate-river-55511.herokuapp.com/
 
 ## ✏️ Description
 
