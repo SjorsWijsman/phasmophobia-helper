@@ -1,4 +1,4 @@
-# Gameplaylists
+# Phasmophobia Helper v2
 Live Link: 
 
 ## ✏️ Description
