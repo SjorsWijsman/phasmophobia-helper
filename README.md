@@ -47,7 +47,7 @@ npm dev
 ## 🏗️ Concepts
 For the Real Time Web course I started with 3 concepts to develop during the course. I started with the first concept (Gameplaylists), still visible on the `old` branch of this repo. Eventually I got demotivated by this concept (not enough challenge) and switched to the Phasmophobia Helper concept.
 
-<details open>
+<details>
 <summary>3 Concepts</summary>
     
 | Gameplaylists | Phasmophobia Book | Poker |
