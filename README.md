@@ -49,10 +49,11 @@ For the Real Time Web course I started with 3 concepts to develop during the cou
 
 <details open>
 <summary>3 Concepts</summary>
-<br>
+    
 | Gameplaylists | Phasmophobia Book | Poker |
 |--|--|--|
 | ![Gameplaylists](https://i.ibb.co/2jMS3tW/Gameplaylists.png) | ![Phasmophobia Helper](https://i.ibb.co/sFdS873/Phasmophobia-Book.png) | ![Poker](https://i.ibb.co/ZHW9R7r/Poker.png)
+
 </details>
 
 ## 📃 Todo list
