@@ -20,8 +20,9 @@ This is a simple companion webapp for [Phasmophobia](https://store.steampowered.
 </table>
 
 ## ✨ Features
-- 
-
+- Easy tracking of ghost name, response & objectives
+- Automatically find the correct ghost
+- Immersive Voice Commands as an alternative input
 
 ## ⚙️ Installation
 1. Clone this Repo locally
@@ -44,8 +45,15 @@ npm dev
 ```
 
 ## 🏗️ Concepts
+For the Real Time Web course I started with 3 concepts to develop during the course. I started with the first concept (Gameplaylists), still visible on the `old` branch of this repo. Eventually I got demotivated by this concept (not enough challenge) and switched to the Phasmophobia Helper concept.
 
-
+<details open>
+<summary>3 Concepts</summary>
+<br>
+| Gameplaylists | Phasmophobia Book | Poker |
+|--|--|--|
+| ![Gameplaylists](https://i.ibb.co/2jMS3tW/Gameplaylists.png) | ![Phasmophobia Helper](https://i.ibb.co/sFdS873/Phasmophobia-Book.png) | ![Poker](https://i.ibb.co/ZHW9R7r/Poker.png)
+</br>
 
 ## 📃 Todo list
 - [x] Reimplement old [Phasmophobia Helper Svelte code](https://github.com/SjorsWijsman/phasmophobia-helper) 
