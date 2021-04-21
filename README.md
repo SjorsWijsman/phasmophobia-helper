@@ -20,7 +20,7 @@ This is a simple companion webapp for [Phasmophobia](https://store.steampowered.
 </table>
 
 ## ✨ Features
-
+- 
 
 
 ## ⚙️ Installation
@@ -38,7 +38,7 @@ npm install
 ```
 npm start
 ```
-4. Or start a dev environment (with automatic updates on code changes) with:
+4. Or start a dev environment (with automatic local server updates on code changes) with:
 ```
 npm dev
 ```
@@ -48,15 +48,46 @@ npm dev
 
 
 ## 📃 Todo list
-
-
+- [x] Reimplement old [Phasmophobia Helper Svelte code](https://github.com/SjorsWijsman/phasmophobia-helper) 
+- [x] Implement static site generation with Snowpack
+- [x] Setup server & Serve files wtith Express
+- [x] Implement basic Socket functionalities
+- [x] Add Socket rooms with ingame lobby codes
+- [ ] Improve Socket stability
+- [ ] Add better feedback for joining lobbies
+- [ ] Prevent bottom of page from jumping around when reducing possible ghost amount
 
 ## ⭐ Tech Stack
+### Svelte
+Svelte Docs: https://svelte.dev/docs
 
+TODO
 
+### Express
+Express Docs: https://expressjs.com/
 
-## 📦 Packages
+TODO
 
+### Snowpack
+Snowpack Docs: https://www.snowpack.dev/
 
+TODO
+
+### Socket.io
+Socket.io Docs: https://socket.io/
+
+TODO
+
+## 📦 Other Packages
+### nodemon
+Nodemon Docs: https://www.npmjs.com/package/nodemon
+
+TODO
+
+### concurrently
+Concurrently Docs: https://www.npmjs.com/package/concurrently
+
+TODO
 
 ## 🔐 License
+MIT License.
