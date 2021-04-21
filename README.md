@@ -53,7 +53,7 @@ For the Real Time Web course I started with 3 concepts to develop during the cou
 | Gameplaylists | Phasmophobia Book | Poker |
 |--|--|--|
 | ![Gameplaylists](https://i.ibb.co/2jMS3tW/Gameplaylists.png) | ![Phasmophobia Helper](https://i.ibb.co/sFdS873/Phasmophobia-Book.png) | ![Poker](https://i.ibb.co/ZHW9R7r/Poker.png)
-</br>
+</details>
 
 ## 📃 Todo list
 - [x] Reimplement old [Phasmophobia Helper Svelte code](https://github.com/SjorsWijsman/phasmophobia-helper) 
