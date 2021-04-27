@@ -10,7 +10,6 @@ button {
   background-color: var(--color-checked);
   border: 0;
   cursor: pointer;
-  z-index: 100;
   position: relative;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -23,6 +22,7 @@ button.floating {
   right: 2rem;
   width: 5rem;
   height: 5rem;
+  z-index: 1;
   padding: 0;
   border-radius: 50%;
 }

@@ -1,10 +1,9 @@
 import { writable } from "svelte/store"
-import { ghostName, ghostResponse, objectives, gatheredEvidence } from "./data/currentData.js";
+import { ghostName, ghostResponse, objectives, gatheredEvidence } from "./data/currentData.js"
 
 const socket = io()
 
-
-export const currentRoom = writable(null)
+export const currentRoom = writable("")
 
 let roomValue = null;
 

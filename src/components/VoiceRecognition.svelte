@@ -3,7 +3,7 @@ import { onMount } from "svelte"
 import { synonyms } from "../data/voiceData.js" 
 import { transcript } from "../data/currentData.js"
 
-import VoiceCommands from "../modules/VoiceCommands.svelte" 
+import VoiceCommands from "./VoiceCommands.svelte" 
 
 let visible = true 
 let support = true 
@@ -87,7 +87,7 @@ header {
   width: 40rem;
   max-width: 100%;
   bottom: 1rem;
-  z-index: 100;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 45rem) {
