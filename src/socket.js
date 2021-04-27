@@ -1,11 +1,9 @@
-import { writable } from "svelte/store"
 import { ghostName, ghostResponse, objectives, gatheredEvidence } from "./data/currentData.js"
 import { persistStore } from "./data/persistStore.js"
 
 const socket = io()
 
 export const currentRoom = persistStore('')
-export const userCount = writable(0)
 
 let roomValue = null
 
@@ -49,11 +47,6 @@ socket.on('data', data => {
   ghostResponse.set(data.ghostResponse)
   objectives.set(data.objectives)
   gatheredEvidence.set(data.gatheredEvidence)
-})
-
-// User Count
-socket.on('user-count', count => {
-  userCount.set(count)
 })
 
 function getData() {

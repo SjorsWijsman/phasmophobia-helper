@@ -41,13 +41,6 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-  console.log('user connected')
-
-  // User disconnects
-  socket.on('disconnect', () => {
-    console.log('disconnected')
-  })
-
   // User joins a room
   socket.on('join', async ([room, data]) => {
 

@@ -54,7 +54,7 @@ function updateSelection() {
 
 .table label {
   margin: 0 auto;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.8rem;
 }
 
 .table > div {
