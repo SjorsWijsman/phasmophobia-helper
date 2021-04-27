@@ -1,7 +1,7 @@
 <script>
 import { objectiveList, evidenceList } from "../data/gameData.js"
 import { transcript, ghostName, ghostResponse, objectives, gatheredEvidence } from "../data/currentData.js"
-import { emitName, emitResponse, emitObjectives, emitEvidence } from "../socket.js"
+import { emitData } from "../socket.js"
 
 const audio = new Audio('./resources/ding.mp3')
 const commandKeyWords = {
@@ -31,19 +31,19 @@ function checkVoiceForCommands() {
       switch (command) {
         case "ghostName":
           setGhostName()
-          emitName($ghostName)
+          emitData()
           break
         case "ghostResponse":
           setGhostResponse()
-          emitResponse($ghostResponse)
+          emitData()
           break
         case "objectives":
           setObjectives()
-          emitObjectives($objectives)
+          emitData()
           break
         case "gatheredEvidence":
           setGatheredEvidence()
-          emitEvidence($gatheredEvidence)
+          emitData()
           break
       }
     }

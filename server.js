@@ -24,20 +24,12 @@ io.on('connection', (socket) => {
     socket.join(room)
   })
 
-  socket.on('name', ([room, name]) => {
-    socket.broadcast.to(room).emit('name', name)
+  socket.on('leave', (room) => {
+    socket.leave(room)
   })
 
-  socket.on('response', ([room, response]) => {
-    socket.broadcast.to(room).emit('response', response)
-  })
-
-  socket.on('objectives', ([room, objectives]) => {
-    socket.broadcast.to(room).emit('objectives', objectives)
-  })
-
-  socket.on('evidence', ([room, evidence]) => {
-    socket.broadcast.to(room).emit('evidence', evidence)
+  socket.on('data', ([room, data]) => {
+    socket.broadcast.to(room).emit('data', data)
   })
 })
 

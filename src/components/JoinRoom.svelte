@@ -1,5 +1,5 @@
 <script>
-import { currentRoom } from "../socket.js"
+import { currentRoom, leaveRoom } from "../socket.js"
 
 export let joinRoomDialogue
 export let roomId
@@ -21,7 +21,6 @@ section {
 }
 
 section::before {
-  pointer-events: none;
   content: "";
   width: 200vw;
   height: 200vh;
@@ -93,8 +92,8 @@ input {
   <div>
     {#if $currentRoom}
       <button on:click={() => { 
-        currentRoom.set("") 
-        roomId=""
+        leaveRoom()
+        roomId=''
       }}>Leave Room</button>
     {:else}
       <button on:click={() => currentRoom.set(roomId)} disabled={!roomId}>Join Room</button>

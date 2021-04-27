@@ -1,7 +1,13 @@
 <script>
 import { resetData } from "../data/currentData.js"
+import { emitData } from "../socket.js";
 
 export let floating = true
+
+function reset() {
+  resetData()
+  emitData()
+}
 </script>
 
 <style>
@@ -33,8 +39,4 @@ button:hover {
 }
 </style>
 
-{#if floating}
-<button class="floating" type="button" on:click={() => resetData()}>Reset Book</button>
-{:else}
-<button type="button" on:click={() => resetData()}>Reset Book</button>
-{/if}
+<button class:floating type="button" on:click={() => reset()}>Reset Book</button>
