@@ -3,6 +3,28 @@ const app = express()
 const http = require('http').createServer(app)
 const path = require('path')
 const io = require('socket.io')(http)
+const MongoClient = require('mongodb').MongoClient
+
+require('dotenv').config()
+const dbuser = process.env.DB_USER
+const dbpassword = process.env.DB_PASS
+const dbname = process.env.DB_NAME
+
+// Connect to MongoDB
+const uri = `mongodb+srv://${dbuser}:${dbpassword}@${dbname}.mongodb.net/phasmophobia-database?retryWrites=true&w=majority`;
+const options = {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+}
+let db = null
+let rooms = null
+MongoClient.connect(uri, options, function(err, client) {
+  if (err) throw err
+  else {
+    db = client.db('phasmophobia-database')
+    rooms = db.collection('rooms')
+  }
+})
 
 const port = process.env.PORT || 4000
 
@@ -20,7 +42,24 @@ io.on('connection', (socket) => {
     console.log('disconnected')
   })
 
-  socket.on('join', (room) => {
+  socket.on('join', async ([room, data]) => {
+    // Find roomId from database
+    const roomData = await rooms.findOne({
+      "roomId": room
+    })
+    // Send roomData to user if it exists
+    if (roomData) {
+      io.to(socket.id).emit('data', roomData)
+    } 
+    // Else, create a new database document
+    else {
+      rooms.insertOne(
+        {
+          "roomId": room,
+          ...data
+        }
+      )
+    }
     socket.join(room)
   })
 
@@ -29,6 +68,12 @@ io.on('connection', (socket) => {
   })
 
   socket.on('data', ([room, data]) => {
+    rooms.updateOne(
+      { "roomId": room }, 
+      {
+        $set: { ...data }
+      }
+    )
     socket.broadcast.to(room).emit('data', data)
   })
 })

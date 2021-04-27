@@ -1,9 +1,9 @@
-import { writable } from "svelte/store"
 import { ghostName, ghostResponse, objectives, gatheredEvidence } from "./data/currentData.js"
+import { persistStore } from "./data/persistStore.js"
 
 const socket = io()
 
-export const currentRoom = writable("")
+export const currentRoom = persistStore('')
 
 let roomValue = null
 
@@ -23,11 +23,12 @@ gatheredEvidence.subscribe(value => gatheredEvidenceValue = value)
 currentRoom.subscribe(room => {
   roomValue = room
   if (room) {
-    socket.emit('join', room)
+    socket.emit('join', [room, getData()])
     console.log('Joined Room: ' + room)
   }
 })
 
+// Leave current Room
 export function leaveRoom() {
   socket.emit('leave', roomValue)
   currentRoom.set('')
@@ -36,13 +37,7 @@ export function leaveRoom() {
 // Emit data to room
 export function emitData() {
   if (roomValue) {
-    const data = {
-      'ghostName': ghostNameValue, 
-      'ghostResponse': ghostResponseValue, 
-      'objectives': objectivesValue, 
-      'gatheredEvidence': gatheredEvidenceValue
-    }
-    socket.emit('data', [roomValue, data])
+    socket.emit('data', [roomValue, getData()])
   }
 }
 
@@ -53,3 +48,18 @@ socket.on('data', data => {
   objectives.set(data.objectives)
   gatheredEvidence.set(data.gatheredEvidence)
 })
+
+
+socket.on('test', data => {
+  console.log(data)
+})
+
+
+function getData() {
+  return {
+    'ghostName': ghostNameValue, 
+    'ghostResponse': ghostResponseValue, 
+    'objectives': objectivesValue, 
+    'gatheredEvidence': gatheredEvidenceValue
+  }
+}
