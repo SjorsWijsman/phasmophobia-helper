@@ -23,6 +23,11 @@ MongoClient.connect(uri, options, function(err, client) {
   else {
     db = client.db('phasmophobia-database')
     rooms = db.collection('rooms')
+    try {
+      rooms.createIndex( { "createdAt": 1 }, { expireAfterSeconds: 60 * 60 * 12 } )
+    } catch (error) {
+      console.error(error)
+    }
   }
 })
 
@@ -38,35 +43,42 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log('user connected')
 
+  // User disconnects
   socket.on('disconnect', () => {
     console.log('disconnected')
   })
 
+  // User joins a room
   socket.on('join', async ([room, data]) => {
+
     // Find roomId from database
     const roomData = await rooms.findOne({
       "roomId": room
     })
+
     // Send roomData to user if it exists
     if (roomData) {
       io.to(socket.id).emit('data', roomData)
-    } 
-    // Else, create a new database document
+    } // Else, create a new database document
     else {
       rooms.insertOne(
         {
+          "createdAt": new Date(),
           "roomId": room,
           ...data
         }
       )
     }
+
     socket.join(room)
   })
 
+  // User leaves a room
   socket.on('leave', (room) => {
     socket.leave(room)
   })
 
+  // User emits data
   socket.on('data', ([room, data]) => {
     rooms.updateOne(
       { "roomId": room }, 

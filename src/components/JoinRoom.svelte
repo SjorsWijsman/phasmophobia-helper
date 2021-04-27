@@ -86,7 +86,7 @@ input {
     {:else}
       Join Room
     {/if}
-    <input type="text" name="name" placeholder="Room ID*" bind:value={roomId} maxlength="16">
+    <input type="text" name="name" placeholder="Room ID*" bind:value={roomId} maxlength="16" autofocus>
     <p>*Room ID can be anything you want, recommended to use the ingame Lobby Code</p>
   </label>
   <div>

@@ -1,6 +1,6 @@
 <script>
 import JoinRoom from "./JoinRoom.svelte"
-import { currentRoom } from "../socket.js"
+import { currentRoom, userCount } from "../socket.js"
 
 let joinRoomDialogue = false
 let roomId = $currentRoom
@@ -45,7 +45,7 @@ button img {
 <button on:click={() => joinRoomDialogue = true}>
   <img src="./resources/icons/profile.svg" alt="">
   {#if $currentRoom}
-    <p>5 Players Connected</p>
+    <p>{$userCount} Players Connected</p>
   {:else}
     <p>Share With Other Players</p>
   {/if}
