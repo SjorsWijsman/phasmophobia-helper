@@ -3,10 +3,6 @@ import { currentRoom } from "../socket.js"
 
 export let joinRoomDialogue
 export let roomId
-
-$: console.log(roomId)
-
-currentRoom.subscribe(value => console.log(value))
 </script>
 
 <style>
@@ -72,6 +68,11 @@ label span {
   font-weight: normal;
 }
 
+label p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
 input {
   color: var(--color-text);
   text-transform: none;
@@ -86,7 +87,8 @@ input {
     {:else}
       Join Room
     {/if}
-    <input type="text" name="name" placeholder="Room ID" bind:value={roomId} maxlength="16">
+    <input type="text" name="name" placeholder="Room ID*" bind:value={roomId} maxlength="16">
+    <p>*Room ID can be anything you want, recommended to use the ingame Lobby Code</p>
   </label>
   <div>
     {#if $currentRoom}

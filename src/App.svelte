@@ -22,7 +22,7 @@ import GhostType from  "./components/page-components/GhostType.svelte"
 	background-color: var(--color-book);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	overflow-y: scroll;
+	overflow: hidden;
 	-webkit-box-shadow: 1rem 1rem 5rem 5rem var(--color-background);
 	box-shadow: 1rem 1rem 5rem 5rem var(--color-background);
 }

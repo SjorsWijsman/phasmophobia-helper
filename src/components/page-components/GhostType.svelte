@@ -24,6 +24,10 @@ function filterGhosts() {
 </script>
 
 <style>
+article {
+  min-height: 20rem;
+}
+
 .ghost-list {
   display: grid;
   grid-template-columns: 1fr 1fr;

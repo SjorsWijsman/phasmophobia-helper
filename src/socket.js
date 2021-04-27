@@ -12,7 +12,7 @@ currentRoom.subscribe(room => {
   roomValue = room
   if (room) {
     socket.emit('join', room)
-    console.log('joined room')
+    console.log('Joined Room: ' + room)
   }
 })
 
