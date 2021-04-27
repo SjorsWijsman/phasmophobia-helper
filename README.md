@@ -1,10 +1,10 @@
-# Phasmophobia Helper v2
+# Phasmophobia Helper
 Live Link: https://phasmophobia-helper.herokuapp.com/
 
 ## ✏️ Description
 This is a simple companion webapp for [Phasmophobia](https://store.steampowered.com/app/739630/Phasmophobia/) that helps you and your team track the ghost name, its behaviour and the objectives. It also helps you decide what kind of ghost you're dealing with. Also works with Speech Recognition (only available in Chrome/Chromium browsers as of 2021).
 
-![Phasmophobia Helper Screenshot](https://i.ibb.co/bdWvzgP/Screenshot-2021-04-21-at-09-49-46.png)
+![Phasmophobia Helper Screenshot](https://i.ibb.co/M6RKCjC/Screenshot-2021-04-27-at-23-20-24.png)
 
 ## 📕 Table of Contents
 <table>
@@ -25,6 +25,9 @@ This is a simple companion webapp for [Phasmophobia](https://store.steampowered.
 - Immersive Voice Commands as an alternative input
 
 ## ⚙️ Installation
+> Looking to just use this webapp? Go to the Live Link here: https://phasmophobia-helper.herokuapp.com/
+
+### Download Repo
 1. Clone this Repo locally
 ```
 git clone https://github.com/SjorsWijsman/real-time-web-2021/
@@ -35,11 +38,16 @@ git clone https://github.com/SjorsWijsman/real-time-web-2021/
 npm install
 ```
 
-3. Build & Start a local server with:
+### Setup Database
+3. Setup a MongoDB database, rename the `.env-example` file to `.env` and fill in the credentials.
+
+### Start Server
+4. Build & Start a local server with:
 ```
 npm start
 ```
-4. Or start a dev environment (with automatic local server updates on code changes) with:
+
+5. Or start a dev environment (with automatic local server updates on code changes) with:
 ```
 npm dev
 ```
@@ -62,9 +70,9 @@ For the Real Time Web course I started with 3 concepts to develop during the cou
 - [x] Setup server & Serve files wtith Express
 - [x] Implement basic Socket functionalities
 - [x] Add Socket rooms with ingame lobby codes
-- [ ] Improve Socket stability
-- [ ] Add better feedback for joining lobbies
-- [ ] Prevent bottom of page from jumping around when reducing possible ghost amount
+- [x] Improve Socket stability
+- [x] Add better feedback for joining lobbies
+- [x] Prevent bottom of page from jumping around when reducing possible ghost amount
 
 ## ⭐ Tech Stack
 ### Svelte
