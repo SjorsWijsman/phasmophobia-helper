@@ -59,7 +59,7 @@ p {
 
 /* Background hero image */
 .background-image {
-  background-image: url("phasmophobia.png");
+  background-image: url("./resources/phasmophobia.png");
   height: 100%;
   width: 100%;
   top: 0;
