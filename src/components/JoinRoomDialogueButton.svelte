@@ -10,7 +10,7 @@ let roomId = $currentRoom
 button {
   z-index: 10;
   padding: 0rem;
-  position: absolute;
+  position: relative;
   max-width: 5rem;
   background-color: transparent;
   border: none;
@@ -18,7 +18,8 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 1rem;
+  top: -7rem;
+  margin-bottom: -5.5rem;
   cursor: pointer;
   opacity: 0.9;
 }

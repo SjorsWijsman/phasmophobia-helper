@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 70rem) {
+@media only screen and (max-width: 90rem) {
   .page {
     -webkit-box-shadow: 0 0 0 0;
 	  box-shadow: 0 0 0 0;

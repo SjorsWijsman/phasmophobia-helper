@@ -87,6 +87,8 @@ header {
   width: 40rem;
   max-width: 100%;
   bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 }
 

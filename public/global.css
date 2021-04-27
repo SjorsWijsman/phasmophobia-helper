@@ -17,21 +17,22 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 400;
   font-family: 'Cormorant', serif;
   color: var(--color-text);
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
 }
 
-@media only screen and (max-width: 70rem) {
+@media only screen and (max-width: 90rem) {
   body {
+    min-height: unset;
+    place-content: unset;
 	  padding: 0.8rem;
     padding-bottom: 3rem;
     height: auto;

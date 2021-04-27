@@ -13,26 +13,25 @@ import GhostType from  "./components/page-components/GhostType.svelte"
 
 <style>
 .book {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 	width: 80rem;
   max-width: 100%;
-  min-height: 51rem;
 	background-color: var(--color-book);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	overflow: hidden;
 	-webkit-box-shadow: 1rem 1rem 5rem 5rem var(--color-background);
 	box-shadow: 1rem 1rem 5rem 5rem var(--color-background);
+	margin: 0 auto;
 }
 
-@media only screen and (max-width: 70rem) {
+@media only screen and (max-width: 90rem) {
   .book {
+    max-width: 60rem;
     position: relative;
     top: 0;
     transform: none;
   	grid-template-columns: 1fr;
+		width: auto;
   }
 }
 </style>

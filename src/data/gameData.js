@@ -10,19 +10,9 @@ export const objectiveList = [
     value: "photo",
   },
   {
-    text: "Capture a photo of Dirty Water in a sink",
-    trigger: "Dirty Water",
-    value: "dirtyWater",
-  },
-  {
     text: "Find evidence of the paranormal with an EMF Reader",
     trigger: "EMF Reader",
     value: "emfReader",
-  },
-  {
-    text: "Detect a room below 10 Celsius with a Thermometer",
-    trigger: "Thermometer",
-    value: "thermometer",
   },
   {
     text: "Detect a Ghosts presence with a Motion Sensor",
@@ -31,8 +21,8 @@ export const objectiveList = [
   },
   {
     text: "Cleanse the area near the Ghost using Smudge Sticks",
-    trigger: "Smudge Sticks",
-    value: "smudgeSticks",
+    trigger: "Cleanse",
+    value: "cleanse",
   },
   {
     text: "Prevent the Ghost from hunting with a Crucifix",
@@ -43,6 +33,26 @@ export const objectiveList = [
     text: "Get a Ghost to walk through Salt",
     trigger: "Salt",
     value: "salt",
+  },
+  {
+    text: "Detect a Ghost precense with a Candle",
+    trigger: "Candle",
+    value: "candle",
+  },
+  {
+    text: "Escape the Ghost during a Hunt with no deaths",
+    trigger: "deaths",
+    value: "deaths",
+  },
+  {
+    text: "Use Smudge Sticks while the Ghost is hunting a player",
+    trigger: "Smudge Sticks",
+    value: "smudgeSticks",
+  },
+  {
+    text: "Get an average Sanity below 25%",
+    trigger: "Sanity",
+    value: "sanity",
   },
 ]
 
