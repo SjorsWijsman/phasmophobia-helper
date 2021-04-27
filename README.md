@@ -1,5 +1,5 @@
 # Phasmophobia Helper v2
-Live Link: https://desolate-river-55511.herokuapp.com/
+Live Link: https://phasmophobia-helper.herokuapp.com/
 
 ## ✏️ Description
 This is a simple companion webapp for [Phasmophobia](https://store.steampowered.com/app/739630/Phasmophobia/) that helps you and your team track the ghost name, its behaviour and the objectives. It also helps you decide what kind of ghost you're dealing with. Also works with Speech Recognition (only available in Chrome/Chromium browsers as of 2021).
