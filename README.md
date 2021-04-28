@@ -83,7 +83,7 @@ For the [Real Time Web course](https://github.com/cmda-minor-web/real-time-web-2
 
 ## ⭐ Tech Stack
 ### Data Life Cycle
-
+![Data Life Cycle Diagram](https://i.ibb.co/gvF95TK/rtw-life-cycle.png)
 
 ### Package: Svelte
 Svelte Docs: https://svelte.dev/docs
