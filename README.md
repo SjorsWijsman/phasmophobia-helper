@@ -83,38 +83,38 @@ For the [Real Time Web course](https://github.com/cmda-minor-web/real-time-web-2
 
 ## ⭐ Tech Stack
 ### Data Life Cycle
-![Data Life Cycle Diagram](https://i.ibb.co/gvF95TK/rtw-life-cycle.png)
+![Data Life Cycle Diagram](https://i.ibb.co/Mg8s0cY/rtw-life-cycle.png)
 
 ### Package: Svelte
 Svelte Docs: https://svelte.dev/docs
 
-TODO
+Svelte is a front-end compiler that makes writing front-end code a lot more fun. Absolutely recommended to use for any project.
 
 ### Package: Express
 Express Docs: https://expressjs.com/
 
-TODO
+Express is a web framework for Node that allows you to run a simple back-end server.
 
 ### Package: Snowpack
 Snowpack Docs: https://www.snowpack.dev/
 
-TODO
+Snowpack is a front-end build tool, used in this project to compile the Svelte code to a static site.
 
 ### Package: Socket.io
 Socket.io Docs: https://socket.io/
 
-TODO
+Socket.io allows you to create realtime and bidirectional communication events between the server and connected clients.
 
 ## 📦 Other Packages
 ### nodemon
 Nodemon Docs: https://www.npmjs.com/package/nodemon
 
-TODO
+Nodemon watches the files in a working directory and restarts the server when it notices a change, allowing for a seamless dev experience.
 
 ### concurrently
 Concurrently Docs: https://www.npmjs.com/package/concurrently
 
-TODO
+Concurrently allows multiple npm commands to be ran 'concurrently' (makes sense, right?)
 
 
 ## 🔐 License
