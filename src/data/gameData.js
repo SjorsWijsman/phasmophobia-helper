@@ -35,7 +35,7 @@ export const objectiveList = [
     value: "salt",
   },
   {
-    text: "Detect a Ghost precense with a Candle",
+    text: "Detect a Ghost presence with a Candle",
     trigger: "Candle",
     value: "candle",
   },

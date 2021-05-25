@@ -7,7 +7,7 @@ import VoiceCommands from "./VoiceCommands.svelte"
 
 let visible = true 
 let support = true 
-let recordingText = "Press the button to Start listening." 
+let recordingText = "Press the button to start Voice Recognition." 
 let recognizing = false 
 
 // https://dev.to/karkranikhil/voice-controlled-notes-taking-application-using-svelte-1kek
