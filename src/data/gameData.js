@@ -150,4 +150,14 @@ export const ghostList = [
     value: "yurei",
     evidence: ["freezingTemperatures", "ghostOrb", "ghostWriting"],
   },
+  {
+    name: "Yokai",
+    value: "yokai",
+    evidence: ["ghostOrb", "ghostWriting", "spiritBox"],
+  },
+  {
+    name: "Hantu",
+    value: "hantu",
+    evidence: ["fingerprints", "ghostOrb", "ghostWriting"],
+  },
 ]
